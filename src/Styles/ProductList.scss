@@ -1,0 +1,33 @@
+
+.main {
+    margin-left: 50px;
+
+    .product-card {
+        display: flex;
+        flex-flow: row wrap;
+        column-gap: 3rem;
+        align-content: flex-start;
+        row-gap: 1rem;
+        padding-bottom: 1rem;
+        height: 100%;
+        width: 100%;
+
+        .product {
+            display: flex;
+            border: 1px solid black;
+            width: 300px;
+            text-align: center;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            padding: 10px 10px 10px 10px;
+
+            input {
+                align-self: flex-start;
+                width: 2rem;
+                height: 1rem;
+                outline: none;
+                border: none;
+            }
+        }
+    }
+}
