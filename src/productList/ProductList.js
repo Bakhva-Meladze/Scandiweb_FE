@@ -1,5 +1,6 @@
 import React from "react";
 import ProductCard from "./ProductCard";
+import {API} from "../Config.js";
 
 class ProductList extends React.Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class ProductList extends React.Component {
             method: 'GET',
             headers: {'Content-type': 'application/json', "mode": "no-cors"},
         }
-        fetch("http://scandiwebapi.bakhva.online/all", response).then(response => response.json()).then(responseData => {
+        fetch(`${API}/all`, response).then(response => response.json()).then(responseData => {
             this.setState({
                 products: responseData,
                 loading: false
@@ -36,7 +37,7 @@ class ProductList extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://scandiwebapi.bakhva.online/delete`, {
+        fetch(`${API}/delete`, {
             method: 'POST',
             body: JSON.stringify(this.state.selectedProducts),
             headers: {

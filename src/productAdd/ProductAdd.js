@@ -3,6 +3,7 @@ import Book from "./types/Book.js";
 import DVD from "./types/DVD.js";
 import Furniture from "./types/Furniture";
 import {withRouter} from "react-router-dom";
+import {API} from "../Config.js";
 
 class ProductAdd extends React.Component {
     constructor(props) {
@@ -31,7 +32,7 @@ class ProductAdd extends React.Component {
             method: 'GET',
             headers: {'Content-type': 'application/json'},
         }
-        fetch("http://scandiwebapi.bakhva.online/create", response).then(response => response.json()).then(responseData => {
+        fetch(`${API}/create`, response).then(response => response.json()).then(responseData => {
             this.setState({
                 types: responseData,
                 type: responseData[0]?.name
@@ -40,7 +41,7 @@ class ProductAdd extends React.Component {
     }
 
     saveProducts(bodyElement) {
-        fetch(`http://scandiwebapi.bakhva.online/store`, {
+        fetch(`${API}/store`, {
             method: 'POST',
             body: JSON.stringify(bodyElement),
             headers: {

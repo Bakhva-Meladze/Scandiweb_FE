@@ -17,6 +17,13 @@
         align-content: flex-start;
         flex-wrap: wrap;
 
+        .extension {
+            .description {
+                font-size: 12px;
+                font-weight: bold;
+            }
+        }
+
         .option {
             max-width: 100%;
             display: flex;
